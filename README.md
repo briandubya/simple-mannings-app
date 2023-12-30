@@ -12,27 +12,16 @@ $$ \[ Q = \frac{1}{n} A R^{2/3} S^{1/2} \] $$
 
 where:
 
-- \( Q \) is the flow rate (\( m^3/s \)),
+- $ \( Q \) $ is the flow rate ($\( m^3/s \$)),
 - \( n \) is the Manning's roughness coefficient (\( s/m^{1/3} \)),
 - \( A \) is the cross-sectional area of flow (\( m^2 \)),
 - \( R \) is the hydraulic radius (\( m \)), which is the area of flow divided by the wetted perimeter,
 - \( S \) is the slope of the energy grade line, which is often approximated as the slope of the channel bed if the flow is uniform.
 
-v = (1/n) * R^(2/3) * S^(1/2)
-where:
-
-v is the cross-sectional average velocity (m/s),
-n is the Manning's roughness coefficient (s/m^(1/3)),
-R is the hydraulic radius of the cross-section (m),
-S is the slope of the energy grade line (m/m).
-The hydraulic radius, R, is the area of the flow cross-section, A, divided by the wetted perimeter, P:
-
-R = A / P
+$ R = A / P $
 
 For a prismatic channel, which is a channel with a constant cross-sectional shape and size along its length, the area A and the wetted perimeter P can be calculated based on the channel's geometric dimensions.
 
-
-Definition sketch for a prismatic channel
 
 ## Project Files
 - app.py
@@ -51,6 +40,8 @@ A JavaScript file that renders the Chart.js graph based on the calculation resul
 The application is designed with a straightforward control flow:
 
 Users enter the required inputs through the web interface (index.html).
+![image](https://github.com/briandubya/simple-mannings-app/assets/61367457/dc160f54-1b17-4578-bc9e-1858c8fcd495)
+
 After form submission, app.py processes the POST route using Flask, performing the neccessary calculations. 
 The calculation of the water depth is not straightforward due to the nature of the Manning's equation. The application employs an iterative approach using a binary search-like algorithm to find the depth that yields the target flow rate. It follows the following logic, 
 
@@ -61,3 +52,4 @@ The calculation of the water depth is not straightforward due to the nature of t
     - Repeating the process until the guess is sufficiently accurate within a defined tolerance.
 
 The results are then passed to result.html, where they are displayed in a formatted table along with a dynamically generated Chart.js graph, visually depicting the channel cross-section and water level.
+![image](https://github.com/briandubya/simple-mannings-app/assets/61367457/0872a267-4851-49ca-9144-3d7a236ea975)
