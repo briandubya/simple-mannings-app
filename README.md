@@ -1,4 +1,4 @@
-# simple-mannings-app
+# Simple Mannings App
 
 ## Overview
 The Simple Mannings App is a web application designed for hydrologists, civil engineers, and environmental scientists to calculate and visually analyze water flow in a prismatic trapezoidal channel. The app uses the Mannings equation to iteratively solve the unknown depth of flow for a given flow rate. 
@@ -8,7 +8,7 @@ Manning's equation is an empirical formula used to calculate the velocity of wat
 
 The flow rate \( Q \) using Manning's equation for an open channel is given by:
 
-\[ Q = \frac{1}{n} A R^{2/3} S^{1/2} \]
+$$ \[ Q = \frac{1}{n} A R^{2/3} S^{1/2} \] $$
 
 where:
 
