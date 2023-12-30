@@ -12,13 +12,13 @@ $$ \[ Q = \frac{1}{n} A R^{2/3} S^{1/2} \] $$
 
 where:
 
-- $ \( Q \) $ is the flow rate ($\( m^3/s \$)),
-- \( n \) is the Manning's roughness coefficient (\( s/m^{1/3} \)),
-- \( A \) is the cross-sectional area of flow (\( m^2 \)),
+- \( Q \) $ is the flow rate ($\( m^3/s \$)),
+- \( n \) is the Manning's roughness coefficient ($\( s/m^{1/3} \)$),
+- \( A \) is the cross-sectional area of flow ($\( m^2 \$)),
 - \( R \) is the hydraulic radius (\( m \)), which is the area of flow divided by the wetted perimeter,
 - \( S \) is the slope of the energy grade line, which is often approximated as the slope of the channel bed if the flow is uniform.
 
-$ R = A / P $
+$R = A / P$
 
 For a prismatic channel, which is a channel with a constant cross-sectional shape and size along its length, the area A and the wetted perimeter P can be calculated based on the channel's geometric dimensions.
 
