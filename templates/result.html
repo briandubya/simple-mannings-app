@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="container">
+    <h2 class="my-4 text-center">Channel Flow Results</h2>
+
+    <!-- Display Results -->
+    <div class="result-section text-center mb-4">
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Parameter</th>
+                    <th scope="col">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Channel Width</td>
+                    <td>{{ visualization_data.channel_width }} m</td>
+                </tr>
+                <tr>
+                    <td>Bank Slope (1V:xH)</td>
+                    <td>1V : {{ visualization_data.bank_slope }}H</td>
+                </tr>
+                <tr>
+                    <td>Channel Depth</td>
+                    <td>{{ visualization_data.channel_depth }} m</td>
+                </tr>
+                <tr>
+                    <td>Manning's n</td>
+                    <td>{{ mannings_n }}</td>
+                </tr>
+                <tr>
+                    <td>Channel Slope</td>
+                    <td>{{ channel_slope }} m/m</td>
+                </tr>
+                <tr class="table-info">
+                    <td>Flow Rate</td>
+                    <td>{{ flow_rate }} m³/s</td>
+                </tr>
+                <tr class="table-success">
+                    <td><strong>Calculated Water Depth</strong></td>
+                    <td><strong>{{ new_depth }} m</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="overflow-warning" class="alert alert-danger text-center" style="display: none;">
+        Warning: Overflow!
+    </div>
+    <!-- Chart Container -->
+    <div class="chart-container" style="position: relative; height:40vh; width:80vw; margin: auto;">
+        <canvas id="channelChart" 
+                data-channel-width="{{ visualization_data.channel_width }}" 
+                data-water-depth="{{ visualization_data.water_depth }}" 
+                data-channel-depth="{{ visualization_data.channel_depth }}"
+                data-bank-slope="{{ visualization_data.bank_slope }}">
+        </canvas>
+    </div>
+    <div class="text-center mt-4">
+        <a href="/" class="btn btn-primary">Perform another calc</a>
+    </div>
+
+    <!-- Include Chart.js and Custom Script -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</div>
+{% endblock %}

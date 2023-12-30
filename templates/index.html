@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <form action="/" method="post" class="form-group">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="channel_width" name="channel_width" placeholder="Channel Width (m)" type="number" step="any">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="bank_slope" name="bank_slope" placeholder="Bank Slope (1V:xH)" type="number" step="any">
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="channel_depth" name="channel_depth" placeholder="Channel Depth (m)" type="number" step="any">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="mannings_n" name="mannings_n" placeholder="Mannings n" type="number" step="any">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="channel_slope" name="channel_slope" placeholder="Channel Slope (m/m)" type="number" step="any">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="flow_rate" name="flow_rate" placeholder="Target Flow Rate (m^3/s)" type="number" step="any">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="initial_depth" name="initial_depth" placeholder="Guess initial depth (m)" type="number" step="any">
+        </div>
+        <button class="btn btn-primary" type="submit">Calculate</button>
+    </form>
+{% endblock %}
